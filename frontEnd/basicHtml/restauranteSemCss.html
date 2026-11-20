@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  CANTINA DO ZÉ - versão SIMPLES (somente HTML semântico)
+  Sem CSS, sem JS e sem atributos visuais antigos (font, center, bgcolor...).
+  Aqui o HTML cuida só da ESTRUTURA e do SIGNIFICADO do conteúdo.
+  A aparência padrão é a que o navegador aplica sozinho.
+  O CSS vai transformar isso na próxima etapa da aula.
+  =====================================================================
+-->
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cantina do Zé - exemplo didático em HTML puro">
+  <title>Cantina do Zé</title>
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header id="topo">
+    <h1>Cantina do Zé</h1>
+    <p>Comida caseira feita com carinho desde 1987</p>
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav>
+      <ul>
+        <!-- Links internos: href="#id" leva à seção com aquele id -->
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#reserva">Reserva</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <!-- Link externo: abre em nova aba -->
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN HTML (nova aba)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre">
+      <h2>Sobre nós</h2>
+
+      <!-- Imagem: src (origem), alt (descrição), width e height (evitam "pulos" no layout) -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='160'%3E%3Crect width='300' height='160' fill='%23b22222'/%3E%3Ctext x='150' y='90' font-size='26' text-anchor='middle' fill='white'%3ECantina do Ze%3C/text%3E%3C/svg%3E"
+           alt="Fachada ilustrativa da Cantina do Zé" width="300" height="160">
+
+      <p>
+        A <strong>Cantina do Zé</strong> nasceu em <em>1987</em> e continua usando
+        a mesma receita da vovó. Aqui você encontra massas, pizzas e sobremesas.
+      </p>
+
+      <p>
+        <small>Texto pequeno: horário de funcionamento de terça a domingo, a partir das 11h30.</small>
+      </p>
+
+      <blockquote>
+        <p>Receita é como família: a gente herda, cuida e passa para frente.</p>
+      </blockquote>
+
+      <!-- Todos os níveis de título, só para demonstração -->
+      <h3>Título nível 3</h3>
+      <h4>Título nível 4</h4>
+      <h5>Título nível 5</h5>
+      <h6>Título nível 6</h6>
+    </section>
+
+    <!-- ===== CARDÁPIO ===== -->
+    <section id="cardapio">
+      <h2>Cardápio</h2>
+
+      <!-- Cada prato é um article: um conteúdo independente -->
+      <article>
+        <h3>Lasanha à Bolonhesa</h3>
+        <p>Massa fresca, molho de carne e queijo gratinado.</p>
+        <p><strong>R$ 68,00</strong></p>
+        <button type="button">Adicionar ao pedido</button>
+      </article>
+
+      <article>
+        <h3>Espaguete ao Sugo</h3>
+        <p>Molho de tomate artesanal e manjericão.</p>
+        <p><strong>R$ 38,00</strong></p>
+        <button type="button">Adicionar ao pedido</button>
+      </article>
+
+      <article>
+        <h3>Pizza Margherita</h3>
+        <p>Molho de tomate, muçarela e manjericão.</p>
+        <p><strong>R$ 55,00</strong></p>
+        <button type="button">Adicionar ao pedido</button>
+      </article>
+
+      <!-- Lista ordenada -->
+      <h3>Sobremesas mais pedidas</h3>
+      <ol>
+        <li>Tiramisù</li>
+        <li>Petit gâteau</li>
+        <li>Pudim de leite</li>
+      </ol>
+
+      <!-- Tabela simples: serve para DADOS -->
+      <h3>Horários</h3>
+      <table>
+        <caption>Funcionamento</caption>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Almoço</th>
+            <th>Jantar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Terça a sexta</td>
+            <td>11h30 - 15h</td>
+            <td>18h - 23h</td>
+          </tr>
+          <tr>
+            <td>Sábado e domingo</td>
+            <td>11h30 - 17h</td>
+            <td>18h - 00h</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== RESERVA (formulário) ===== -->
+    <section id="reserva">
+      <h2>Faça sua reserva</h2>
+      <p>Este formulário não envia nada: falta JavaScript e servidor. A validação nativa (required) funciona.</p>
+
+      <form action="/reserva" method="post">
+
+        <fieldset>
+          <legend>Seus dados</legend>
+
+          <!-- label + for liga o texto ao campo (clicar no texto foca o input) -->
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          </div>
+
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+          </div>
+
+          <div>
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="tel" name="tel">
+          </div>
+
+          <div>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalhes</legend>
+
+          <div>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
+          </div>
+
+          <div>
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora">
+          </div>
+
+          <div>
+            <label for="pessoas">Pessoas:</label>
+            <input type="number" id="pessoas" name="pessoas" min="1" max="20" value="2">
+          </div>
+
+          <div>
+            <label for="ambiente">Ambiente:</label>
+            <select id="ambiente" name="ambiente">
+              <option value="">Escolha...</option>
+              <option value="salao">Salão</option>
+              <option value="varanda">Varanda</option>
+              <option value="jardim">Jardim</option>
+            </select>
+          </div>
+
+          <!-- Radio: mesmo name = só um pode ser escolhido -->
+          <p>Turno:</p>
+          <div>
+            <input type="radio" id="almoco" name="turno" value="almoco" checked>
+            <label for="almoco">Almoço</label>
+
+            <input type="radio" id="jantar" name="turno" value="jantar">
+            <label for="jantar">Jantar</label>
+          </div>
+
+          <!-- Checkbox: vários podem ser marcados -->
+          <p>Restrições:</p>
+          <div>
+            <input type="checkbox" id="vegetariano" name="restricao" value="vegetariano">
+            <label for="vegetariano">Vegetariano</label>
+
+            <input type="checkbox" id="semgluten" name="restricao" value="semgluten">
+            <label for="semgluten">Sem glúten</label>
+          </div>
+
+          <div>
+            <label for="obs">Observações:</label><br>
+            <textarea id="obs" name="obs" rows="4" cols="40"></textarea>
+          </div>
+        </fieldset>
+
+        <div>
+          <button type="submit">Enviar reserva</button>
+          <button type="reset">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato">
+      <h2>Contato</h2>
+
+      <address>
+        Rua das Flores, 123 - Centro<br>
+        São Paulo - SP
+      </address>
+
+      <ul>
+        <li>E-mail: <a href="mailto:contato@cantinadoze.com.br">contato@cantinadoze.com.br</a></li>
+        <li>Telefone: <a href="tel:+551140000000">(11) 4000-0000</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram (nova aba)</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- aside: conteúdo complementar -->
+  <aside>
+    <h2>Você sabia?</h2>
+    <p>O tomate do nosso molho vem de uma horta própria, colhido toda manhã.</p>
+  </aside>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <p><a href="#topo">Voltar ao topo</a></p>
+    <p>&copy; 1987-2026 Cantina do Zé. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

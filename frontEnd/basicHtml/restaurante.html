@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  PÁGINA DIDÁTICA: "Cantina do Zé" - SOMENTE HTML (sem CSS, sem JS)
+  =====================================================================
+  Objetivo: mostrar quase todos os elementos do HTML em uso.
+  Para "estilizar" sem CSS, usamos recursos ANTIGOS do próprio HTML
+  (bgcolor, <font>, <center>, <marquee>, border="1"...). Eles estão
+  OBSOLETOS (deprecated) e hoje a estilização é papel do CSS, mas
+  ainda funcionam e ajudam a entender como a web era antes do CSS.
+
+  Quase nada funciona (botões, busca, envio de formulário) porque
+  falta JavaScript (e um servidor). Isso é proposital!
+  =====================================================================
+-->
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cantina do Zé - página de exemplo didático em HTML puro">
+  <meta name="author" content="Aula de Front-end">
+  <title>Cantina do Zé - Comida caseira desde 1987</title>
+  <!-- Ícone da aba (favicon) usando uma imagem embutida -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23b22222'/%3E%3C/svg%3E">
+</head>
+
+<!-- Atributos antigos do body: bgcolor (fundo), text (texto), link, vlink (visitado), alink (ativo) -->
+<body bgcolor="#FFF8DC" text="#4B0000" link="#B22222" vlink="#800080" alink="#FF0000">
+
+  <!-- Âncora de topo: o link "voltar ao topo" no rodapé aponta para ela -->
+  <a id="topo"></a>
+
+  <!-- ============================================================
+       1) CABEÇALHO (header) com banner, logo e letreiro
+       ============================================================ -->
+  <header>
+    <center>
+      <table width="100%" bgcolor="#B22222" cellpadding="10">
+        <tr>
+          <td align="center">
+            <!-- Imagem com src, alt, width e height -->
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23FFD700' stroke='%238B0000' stroke-width='6'/%3E%3Ctext x='60' y='72' font-size='40' text-anchor='middle'%3E%F0%9F%8D%9D%3C/text%3E%3C/svg%3E"
+                 alt="Logotipo da Cantina do Zé: prato de macarrão" width="120" height="120">
+          </td>
+          <td align="center">
+            <h1><font color="#FFD700" face="Georgia, serif" size="7">Cantina do Zé</font></h1>
+            <p><font color="#FFFFFF" face="Verdana" size="4"><i>"Comida caseira feita com carinho desde 1987"</i></font></p>
+          </td>
+          <td align="center">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Ccircle cx='60' cy='60' r='56' fill='%23FFD700' stroke='%238B0000' stroke-width='6'/%3E%3Ctext x='60' y='72' font-size='40' text-anchor='middle'%3E%F0%9F%8D%95%3C/text%3E%3C/svg%3E"
+                 alt="Ícone de uma pizza" width="120" height="120">
+          </td>
+        </tr>
+      </table>
+
+      <!-- Letreiro animado (obsoleto, mas funciona sem JS!) -->
+      <marquee bgcolor="#FFD700" scrollamount="6">
+        <b>🍕 PROMOÇÃO: toda quinta-feira, pizza grande pelo preço da média! 🍝 Aceitamos Pix! 🥗 Novo cardápio vegetariano! 🍰 Sobremesa grátis no seu aniversário! 🍕</b>
+      </marquee>
+    </center>
+  </header>
+
+  <!-- ============================================================
+       2) NAVEGAÇÃO (nav) com links internos e externos
+       ============================================================ -->
+  <nav>
+    <center>
+      <table bgcolor="#8B0000" width="100%" cellpadding="8">
+        <tr>
+          <td align="center">
+            <!-- Links internos: href="#id" leva à seção com aquele id (funciona sem JS!) -->
+            <a href="#sobre"><font color="#FFFFFF"><b>Sobre nós</b></font></a>
+            &nbsp;|&nbsp;
+            <a href="#cardapio"><font color="#FFFFFF"><b>Cardápio</b></font></a>
+            &nbsp;|&nbsp;
+            <a href="#horarios"><font color="#FFFFFF"><b>Horários</b></font></a>
+            &nbsp;|&nbsp;
+            <a href="#galeria"><font color="#FFFFFF"><b>Galeria</b></font></a>
+            &nbsp;|&nbsp;
+            <a href="#reserva"><font color="#FFFFFF"><b>Reservas</b></font></a>
+            &nbsp;|&nbsp;
+            <a href="#contato"><font color="#FFFFFF"><b>Contato</b></font></a>
+            &nbsp;|&nbsp;
+            <!-- Link externo: abre em nova aba (target="_blank") com rel por segurança -->
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer"><font color="#FFD700"><b>MDN HTML ↗</b></font></a>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </nav>
+
+  <hr size="5" color="#B22222">
+
+  <!-- ============================================================
+       3) CONTEÚDO PRINCIPAL (main)
+       ============================================================ -->
+  <main>
+
+    <!-- ---------- Boas-vindas: títulos de h1 a h6 ---------- -->
+    <section id="boasvindas">
+      <center>
+        <h2><font color="#B22222">Bem-vindo à nossa mesa!</font></h2>
+      </center>
+
+      <!-- Demonstração da hierarquia de títulos -->
+      <div>
+        <h1>Título nível 1 (h1)</h1>
+        <h2>Título nível 2 (h2)</h2>
+        <h3>Título nível 3 (h3)</h3>
+        <h4>Título nível 4 (h4)</h4>
+        <h5>Título nível 5 (h5)</h5>
+        <h6>Título nível 6 (h6)</h6>
+        <p><small>👆 Num site real usaríamos UM h1 por página e os demais em ordem. Aqui estão todos juntos só para a aula.</small></p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Sobre nós: vários tipos de parágrafo e texto ---------- -->
+    <section id="sobre">
+      <h2><font color="#8B0000">📖 Sobre nós</font></h2>
+
+      <article>
+        <h3>Nossa história</h3>
+
+        <p>
+          A <b>Cantina do Zé</b> nasceu em <i>1987</i>, quando o Sr. José abriu uma pequena mesa
+          na calçada para vender <u>macarronada</u> aos vizinhos. Hoje, somos <strong>referência</strong>
+          em comida caseira, e continuamos <em>cozinhando com a mesma receita da vovó</em>.
+        </p>
+
+        <p align="center"><font color="#B22222" size="5"><b>"Quem come na Cantina do Zé, volta sempre!"</b></font></p>
+
+        <p align="right"><small>— Dona Maria, cliente desde 1990</small></p>
+
+        <!-- Citação em bloco -->
+        <blockquote>
+          <p>Receita é como família: a gente herda, cuida e passa para frente.</p>
+          <footer>— <cite>José da Silva, fundador</cite></footer>
+        </blockquote>
+
+        <!-- Texto formatado de várias maneiras -->
+        <p>
+          Exemplos de formatação: <b>negrito (b)</b>, <strong>importante (strong)</strong>,
+          <i>itálico (i)</i>, <em>ênfase (em)</em>, <u>sublinhado (u)</u>,
+          <s>riscado (s)</s>, <del>texto removido (del)</del>, <ins>texto inserido (ins)</ins>,
+          <mark>destacado (mark)</mark>, <small>pequeno (small)</small>, <big>grande (big)</big>,
+          H<sub>2</sub>O (sub), m<sup>2</sup> (sup), <code>código (code)</code>,
+          <kbd>Ctrl</kbd>+<kbd>P</kbd> (kbd), <samp>saída (samp)</samp>, <var>variável (var)</var>,
+          <abbr title="Cadastro de Pessoas Físicas">CPF</abbr> (abbr - passe o mouse),
+          <q>citação curta (q)</q>, <dfn>definição (dfn)</dfn>.
+        </p>
+
+        <p>
+          Fundada em <time datetime="1987-03-15">15 de março de 1987</time>.<br>
+          Quebra de linha com br.<br>
+          E outra linha logo abaixo.
+        </p>
+
+        <!-- Texto pré-formatado preserva espaços e quebras -->
+        <pre>
+  ~~~ RECEITA DA VOVÓ ~~~
+  Molho:  tomate .......... 1 kg
+          cebola .......... 1 un
+          manjericão ...... a gosto
+</pre>
+
+        <!-- Endereço -->
+        <address>
+          <b>Endereço:</b><br>
+          Rua das Flores, 123 - Centro<br>
+          São Paulo - SP, CEP 01000-000
+        </address>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Cardápio: article, listas, tabela ---------- -->
+    <section id="cardapio">
+      <h2><font color="#8B0000">🍽️ Cardápio</font></h2>
+
+      <!-- Entradas -->
+      <article>
+        <h3>🥗 Entradas</h3>
+        <!-- Lista não ordenada -->
+        <ul>
+          <li><b>Bruschetta</b> - pão italiano, tomate e manjericão</li>
+          <li><b>Carpaccio</b> - fatias finas de carne com parmesão</li>
+          <li><b>Salada Caprese</b> - tomate, muçarela de búfala e pesto
+            <!-- Lista aninhada -->
+            <ul>
+              <li>Opção sem lactose disponível</li>
+              <li>Opção vegana disponível</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Pratos principais em tabela -->
+      <article>
+        <h3>🍝 Pratos principais</h3>
+
+        <!-- Tabela completa: caption, thead, tbody, tfoot, colspan, rowspan -->
+        <table border="3" cellpadding="8" cellspacing="0" width="100%" bgcolor="#FFFFFF" bordercolor="#B22222">
+          <caption><b>Tabela de preços - atualizada em <time datetime="2026-11-01">nov/2026</time></b></caption>
+          <thead bgcolor="#B22222">
+            <tr>
+              <th>Prato</th>
+              <th>Descrição</th>
+              <th>Serve</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Lasanha à Bolonhesa</b></td>
+              <td>Massa fresca, molho de carne e queijo gratinado</td>
+              <td align="center">2 pessoas</td>
+              <td align="right">R$ 68,00</td>
+            </tr>
+            <tr bgcolor="#FFF0F0">
+              <td><b>Espaguete ao Sugo</b></td>
+              <td>Molho de tomate artesanal</td>
+              <td align="center">1 pessoa</td>
+              <td align="right">R$ 38,00</td>
+            </tr>
+            <tr>
+              <td><b>Risoto de Cogumelos</b></td>
+              <td>Arroz arbóreo, cogumelos frescos e parmesão</td>
+              <td align="center">1 pessoa</td>
+              <td align="right">R$ 52,00</td>
+            </tr>
+            <tr bgcolor="#FFF0F0">
+              <td><b>Filé à Parmegiana</b></td>
+              <td>Filé empanado, molho e queijo, acompanha arroz e fritas</td>
+              <td align="center">2 pessoas</td>
+              <td align="right">R$ 79,00</td>
+            </tr>
+            <tr>
+              <td rowspan="2"><b>Pizzas</b> (rowspan)</td>
+              <td>Margherita</td>
+              <td align="center">Grande</td>
+              <td align="right">R$ 55,00</td>
+            </tr>
+            <tr>
+              <td>Calabresa</td>
+              <td align="center">Grande</td>
+              <td align="right">R$ 58,00</td>
+            </tr>
+          </tbody>
+          <tfoot bgcolor="#FFD700">
+            <tr>
+              <td colspan="4" align="center"><small>* Valores sujeitos a alteração. Taxa de serviço de 10% não inclusa (colspan).</small></td>
+            </tr>
+          </tfoot>
+        </table>
+      </article>
+
+      <!-- Sobremesas: lista ordenada -->
+      <article>
+        <h3>🍰 Sobremesas mais pedidas (ranking)</h3>
+        <ol>
+          <li>Tiramisù</li>
+          <li>Petit gâteau com sorvete</li>
+          <li>Pudim de leite</li>
+          <li>Cannoli
+            <ol type="a">
+              <li>de chocolate</li>
+              <li>de ricota</li>
+            </ol>
+          </li>
+        </ol>
+
+        <!-- Lista de definição -->
+        <h4>Glossário da cozinha</h4>
+        <dl>
+          <dt><b>Al dente</b></dt>
+          <dd>Massa cozida mas ainda firme ao morder.</dd>
+          <dt><b>Sugo</b></dt>
+          <dd>Molho de tomate italiano.</dd>
+          <dt><b>Gratinar</b></dt>
+          <dd>Dourar o queijo no forno.</dd>
+        </dl>
+      </article>
+
+      <!-- Prato do dia: details/summary funciona sem JS! -->
+      <article>
+        <h3>⭐ Prato do dia</h3>
+        <details>
+          <summary><b>Clique para ver o prato do dia</b> (funciona sem JS!)</summary>
+          <p>Hoje: <mark>Feijoada completa</mark> com arroz, couve, farofa e laranja. R$ 49,90</p>
+        </details>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Horários ---------- -->
+    <section id="horarios">
+      <h2><font color="#8B0000">🕒 Horários de funcionamento</font></h2>
+      <div>
+        <table border="1" cellpadding="6" bgcolor="#FFFFE0">
+          <tr bgcolor="#FFD700"><th>Dia</th><th>Almoço</th><th>Jantar</th></tr>
+          <tr><td>Segunda a Sexta</td><td>11h30 - 15h</td><td>18h - 23h</td></tr>
+          <tr><td>Sábado</td><td>11h30 - 16h</td><td>18h - 00h</td></tr>
+          <tr><td>Domingo</td><td colspan="2" align="center">11h30 - 17h (sem jantar)</td></tr>
+        </table>
+
+        <!-- Barra de progresso e medidor: elementos nativos -->
+        <p>Lotação agora: <progress value="70" max="100">70%</progress> 70%</p>
+        <p>Nota dos clientes: <meter value="4.7" min="0" max="5" low="2" high="4" optimum="5">4.7</meter> 4,7 / 5</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Galeria: imagens, figure, picture, áudio, vídeo, mapa ---------- -->
+    <section id="galeria">
+      <h2><font color="#8B0000">📸 Galeria</font></h2>
+
+      <table cellpadding="10">
+        <tr>
+          <td>
+            <figure>
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170'%3E%3Crect width='260' height='170' fill='%23c0392b'/%3E%3Ctext x='130' y='95' font-size='28' text-anchor='middle' fill='white'%3EPizza%3C/text%3E%3C/svg%3E"
+                   alt="Imagem ilustrativa de uma pizza" width="260" height="170" border="3">
+              <figcaption><i>Figura 1: Nossa pizza Margherita</i></figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170'%3E%3Crect width='260' height='170' fill='%23e67e22'/%3E%3Ctext x='130' y='95' font-size='28' text-anchor='middle' fill='white'%3ELasanha%3C/text%3E%3C/svg%3E"
+                   alt="Imagem ilustrativa de uma lasanha" width="260" height="170" border="3">
+              <figcaption><i>Figura 2: Lasanha da casa</i></figcaption>
+            </figure>
+          </td>
+          <td>
+            <figure>
+              <!-- Imagem que é um link (clicável) -->
+              <a href="#topo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170'%3E%3Crect width='260' height='170' fill='%2327ae60'/%3E%3Ctext x='130' y='95' font-size='28' text-anchor='middle' fill='white'%3ESalada%3C/text%3E%3C/svg%3E"
+                     alt="Imagem ilustrativa de uma salada. Clique para voltar ao topo" width="260" height="170" border="3">
+              </a>
+              <figcaption><i>Figura 3: Salada (imagem-link: volta ao topo)</i></figcaption>
+            </figure>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Imagem com mapa clicável -->
+      <h4>Mapa de imagem clicável (map + area)</h4>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='100'%3E%3Crect width='150' height='100' fill='%23c0392b'/%3E%3Crect x='150' width='150' height='100' fill='%23f1c40f'/%3E%3Ctext x='75' y='55' font-size='18' text-anchor='middle' fill='white'%3ECardapio%3C/text%3E%3Ctext x='225' y='55' font-size='18' text-anchor='middle'%3EReservas%3C/text%3E%3C/svg%3E"
+           alt="Imagem com duas áreas clicáveis: Cardápio e Reservas" width="300" height="100" usemap="#mapa-menu">
+      <map name="mapa-menu">
+        <area shape="rect" coords="0,0,150,100" href="#cardapio" alt="Ir para o cardápio">
+        <area shape="rect" coords="150,0,300,100" href="#reserva" alt="Ir para reservas">
+      </map>
+
+      <!-- Vídeo e áudio: os controles aparecem, mas não há arquivo real (src fictício) -->
+      <h4>Vídeo (video)</h4>
+      <video controls width="320" height="180" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180'%3E%3Crect width='320' height='180' fill='%23333'/%3E%3Ctext x='160' y='95' font-size='20' text-anchor='middle' fill='white'%3EVideo indisponivel%3C/text%3E%3C/svg%3E">
+        <source src="video-da-cozinha.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+
+      <h4>Áudio (audio)</h4>
+      <audio controls>
+        <source src="musica-ambiente.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+
+      <p><small>👆 Os arquivos de vídeo/áudio não existem de propósito: mostram como o navegador reage a um <code>src</code> quebrado.</small></p>
+
+      <!-- iframe: página dentro de página -->
+      <h4>Mapa embutido (iframe)</h4>
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-46.65,-23.57,-46.62,-23.55&amp;layer=mapnik"
+              width="400" height="250" title="Mapa de localização da Cantina do Zé"></iframe>
+      <p><small><a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">Abrir mapa maior ↗</a></small></p>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Reservas: formulário com TODOS os campos ---------- -->
+    <section id="reserva">
+      <h2><font color="#8B0000">📅 Faça sua reserva</font></h2>
+      <p><small>Este formulário <b>não envia nada</b>: não há JavaScript nem servidor. Mas a validação nativa (required, minlength, pattern...) funciona!</small></p>
+
+      <!-- action = para onde enviar; method = como enviar -->
+      <form action="/reserva" method="post" autocomplete="on">
+
+        <fieldset>
+          <legend><b>👤 Seus dados</b></legend>
+
+          <p>
+            <label for="nome">Nome completo (*):</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Ex.: Maria da Silva" required minlength="3" maxlength="80">
+          </p>
+
+          <p>
+            <label for="email">E-mail (*):</label><br>
+            <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+          </p>
+
+          <p>
+            <label for="tel">Telefone:</label><br>
+            <input type="tel" id="tel" name="tel" placeholder="(11) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" title="Formato: (11) 99999-9999">
+          </p>
+
+          <p>
+            <label for="senha">Senha da conta (password):</label><br>
+            <input type="password" id="senha" name="senha" minlength="6">
+          </p>
+
+          <p>
+            <label for="site">Seu site ou rede social (url):</label><br>
+            <input type="url" id="site" name="site" placeholder="https://...">
+          </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend><b>🗓️ Detalhes da reserva</b></legend>
+
+          <p>
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+            &nbsp;
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" min="11:30" max="23:00" step="900">
+          </p>
+
+          <p>
+            <label for="pessoas">Nº de pessoas (number):</label>
+            <input type="number" id="pessoas" name="pessoas" min="1" max="20" value="2">
+          </p>
+
+          <p>
+            <label for="conforto">Conforto da mesa (range):</label>
+            1 <input type="range" id="conforto" name="conforto" min="1" max="10" value="5"> 10
+          </p>
+
+          <p>
+            <label for="mes">Mês do aniversário (month):</label>
+            <input type="month" id="mes" name="mes">
+            &nbsp;
+            <label for="semana">Semana (week):</label>
+            <input type="week" id="semana" name="semana">
+          </p>
+
+          <p>
+            <label for="datahora">Data e hora locais (datetime-local):</label>
+            <input type="datetime-local" id="datahora" name="datahora">
+          </p>
+
+          <p>
+            <label for="cor">Cor da toalha de mesa (color):</label>
+            <input type="color" id="cor" name="cor" value="#b22222">
+          </p>
+
+          <!-- select simples -->
+          <p>
+            <label for="ambiente">Ambiente (select):</label>
+            <select id="ambiente" name="ambiente">
+              <option value="">-- Escolha --</option>
+              <option value="salao">Salão interno</option>
+              <option value="varanda" selected>Varanda</option>
+              <option value="jardim">Jardim</option>
+              <option value="privativo" disabled>Sala privativa (indisponível)</option>
+            </select>
+          </p>
+
+          <!-- select com grupos -->
+          <p>
+            <label for="prato">Prato favorito (select com optgroup):</label>
+            <select id="prato" name="prato">
+              <optgroup label="Massas">
+                <option>Lasanha</option>
+                <option>Espaguete</option>
+              </optgroup>
+              <optgroup label="Carnes">
+                <option>Parmegiana</option>
+                <option>Feijoada</option>
+              </optgroup>
+              <optgroup label="Vegetarianos">
+                <option>Risoto de cogumelos</option>
+                <option>Salada Caprese</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <!-- select múltiplo -->
+          <p>
+            <label for="bebidas">Bebidas (select múltiplo, segure Ctrl):</label><br>
+            <select id="bebidas" name="bebidas" multiple size="4">
+              <option>Água</option>
+              <option>Refrigerante</option>
+              <option>Suco natural</option>
+              <option>Vinho tinto</option>
+              <option>Cerveja</option>
+            </select>
+          </p>
+
+          <!-- datalist: sugestões -->
+          <p>
+            <label for="ocasiao">Ocasião (input + datalist):</label>
+            <input type="text" id="ocasiao" name="ocasiao" list="lista-ocasioes" placeholder="Comece a digitar...">
+            <datalist id="lista-ocasioes">
+              <option value="Aniversário">
+              <option value="Casamento">
+              <option value="Reunião de trabalho">
+              <option value="Jantar romântico">
+            </datalist>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <legend><b>✅ Preferências</b></legend>
+
+          <!-- Radio: só um por grupo (mesmo name) -->
+          <p>
+            <b>Turno:</b><br>
+            <input type="radio" id="almoco" name="turno" value="almoco" checked>
+            <label for="almoco">Almoço</label>
+            <input type="radio" id="jantar" name="turno" value="jantar">
+            <label for="jantar">Jantar</label>
+          </p>
+
+          <!-- Checkbox: vários -->
+          <p>
+            <b>Restrições alimentares:</b><br>
+            <input type="checkbox" id="vegetariano" name="restricao" value="vegetariano">
+            <label for="vegetariano">Vegetariano</label><br>
+            <input type="checkbox" id="semgluten" name="restricao" value="semgluten">
+            <label for="semgluten">Sem glúten</label><br>
+            <input type="checkbox" id="semlactose" name="restricao" value="semlactose" checked>
+            <label for="semlactose">Sem lactose</label><br>
+            <input type="checkbox" id="indisponivel" name="restricao" value="x" disabled>
+            <label for="indisponivel">Opção desabilitada (disabled)</label>
+          </p>
+
+          <p>
+            <label for="foto">Foto do cartão fidelidade (file):</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+          </p>
+
+          <p>
+            <label for="busca">Buscar no cardápio (search):</label>
+            <input type="search" id="busca" name="busca" placeholder="Ex.: lasanha">
+          </p>
+
+          <p>
+            <label for="obs">Observações (textarea):</label><br>
+            <textarea id="obs" name="obs" rows="4" cols="50" placeholder="Alguma alergia? Cadeira de bebê?"></textarea>
+          </p>
+
+          <p>
+            <label for="readonly">Campo somente leitura (readonly):</label>
+            <input type="text" id="readonly" value="Mesa 12" readonly>
+          </p>
+
+          <!-- Campo oculto: existe no DOM, mas o usuário não vê -->
+          <input type="hidden" name="origem" value="site-restaurante">
+
+          <p>
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Li e aceito os termos (*)</label>
+          </p>
+        </fieldset>
+
+        <br>
+
+        <!-- Vários tipos de botão -->
+        <p>
+          <button type="submit">📨 Enviar reserva (submit)</button>
+          <button type="reset">🧹 Limpar (reset)</button>
+          <button type="button">🚫 Não faz nada (button)</button>
+          <button type="button" disabled>🔒 Desabilitado</button>
+        </p>
+        <p>
+          <input type="submit" value="Enviar (input submit)">
+          <input type="reset" value="Limpar (input reset)">
+          <input type="button" value="Botão (input button)">
+          <input type="image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30'%3E%3Crect width='120' height='30' fill='%23b22222'/%3E%3Ctext x='60' y='20' font-size='14' text-anchor='middle' fill='white'%3EImagem-botao%3C/text%3E%3C/svg%3E" alt="Enviar com botão de imagem" width="120" height="30">
+        </p>
+
+        <!-- Resultado de cálculo: o output só funcionaria com JS -->
+        <p>Total estimado: <output name="total">R$ 0,00</output> <small>(precisaria de JS para calcular)</small></p>
+      </form>
+    </section>
+
+    <hr>
+
+    <!-- ---------- Depoimentos: article, aside ---------- -->
+    <section id="depoimentos">
+      <h2><font color="#8B0000">💬 O que dizem nossos clientes</font></h2>
+
+      <div>
+        <article>
+          <h4>⭐⭐⭐⭐⭐ "Melhor lasanha da cidade!"</h4>
+          <p>Fui no domingo com a família toda e todo mundo saiu feliz. Atendimento excelente.</p>
+          <p><small><i>por Carlos M. - <time datetime="2026-10-12">12/10/2026</time></i></small></p>
+        </article>
+
+        <article>
+          <h4>⭐⭐⭐⭐ "Ótimo custo-benefício"</h4>
+          <p>Porções generosas e preço justo. Só achei a espera um pouco longa no sábado.</p>
+          <p><small><i>por Ana P. - <time datetime="2026-09-03">03/09/2026</time></i></small></p>
+        </article>
+      </div>
+
+      <!-- aside: conteúdo lateral/complementar -->
+      <aside>
+        <table border="2" cellpadding="8" bgcolor="#FFFACD" align="right" width="250">
+          <tr><td>
+            <h4>💡 Você sabia?</h4>
+            <p>O tomate usado no nosso molho vem de uma horta própria, colhido toda manhã!</p>
+          </td></tr>
+        </table>
+      </aside>
+      <br clear="all">
+    </section>
+
+    <hr>
+
+    <!-- ---------- Contato ---------- -->
+    <section id="contato">
+      <h2><font color="#8B0000">📞 Contato</font></h2>
+      <div>
+        <ul>
+          <!-- Links especiais: mailto, tel, download, âncora -->
+          <li>E-mail: <a href="mailto:contato@cantinadoze.com.br?subject=Quero%20reservar">contato@cantinadoze.com.br</a></li>
+          <li>Telefone: <a href="tel:+551140000000">(11) 4000-0000</a></li>
+          <li>WhatsApp: <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">(11) 99999-9999 ↗</a></li>
+          <li>Instagram: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@cantinadoze ↗</a></li>
+          <li>Cardápio em PDF: <a href="cardapio.pdf" download>Baixar (download - arquivo fictício)</a></li>
+          <li>Link quebrado de propósito: <a href="pagina-que-nao-existe.html">Promoções</a> (dá erro 404)</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <hr size="5" color="#B22222">
+
+  <!-- ============================================================
+       4) RODAPÉ (footer)
+       ============================================================ -->
+  <footer>
+    <center>
+      <table width="100%" bgcolor="#4B0000" cellpadding="12">
+        <tr>
+          <td align="center">
+            <font color="#FFFFFF" size="2">
+              <p>
+                <a href="#topo"><font color="#FFD700">⬆ Voltar ao topo</font></a>
+              </p>
+              <p>
+                &copy; 1987-2026 <b>Cantina do Zé</b> &mdash; Todos os direitos reservados.<br>
+                CNPJ 00.000.000/0001-00 &bull; Rua das Flores, 123 &bull; São Paulo - SP
+              </p>
+              <p>
+                <small>Página didática feita <u>somente com HTML</u>: sem CSS e sem JavaScript.</small>
+              </p>
+            </font>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </footer>
+
+  <!-- Conteúdo para quando o JavaScript está desativado (noscript) -->
+  <noscript>
+    <p><b>Aviso:</b> seu JavaScript está desativado. (Aqui ele nunca existiu mesmo 😄)</p>
+  </noscript>
+
+</body>
+</html>
